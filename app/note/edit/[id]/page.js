@@ -7,7 +7,7 @@ export default async function EditPage({ params }) {
 
   // 让效果更明显
   const sleep = ms => new Promise(r => setTimeout(r, ms));
-  await sleep(2000);
+  await sleep(1000);
 
   if (note === null) {
     return (

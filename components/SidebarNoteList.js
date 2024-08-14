@@ -5,7 +5,7 @@ import { sleep } from '@/lib/utils';
 
 export default async function NoteList() {
 
-  await sleep(2000)
+  await sleep(1000)
   const notes = await getAllNotes()
 
   if (Object.entries(notes).length == 0) {
@@ -17,7 +17,7 @@ export default async function NoteList() {
   return (
     <SidebarNoteListFilter notes = {
       Object.entries(notes).map(([noteId, note]) => {
-        const noteData = JSON.parse(note)
+        const noteData = note
         return {
           noteId,
           note: noteData,

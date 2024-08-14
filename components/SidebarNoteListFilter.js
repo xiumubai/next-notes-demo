@@ -3,7 +3,7 @@
 import { useSearchParams } from 'next/navigation'
 import SidebarNoteItemContent from '@/components/SidebarNoteItemContent';
 
-export default function SidebarNoteListFilter({ notes }) {
+export default function SidebarNoteList({ notes }) {
   const searchParams = useSearchParams()
   const searchText = searchParams.get('q')
   return (

@@ -24,7 +24,7 @@ export default async function Sidebar() {
         </Link>
         <section className="sidebar-menu" role="menubar">
           <SidebarSearchField />
-          <EditButton noteId={null}>New</EditButton>
+          <EditButton noteId={null}>+</EditButton>
         </section>
         <section className="sidebar-menu" role="menubar">
           {/* SideSearchField */}

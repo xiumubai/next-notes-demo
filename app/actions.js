@@ -31,18 +31,20 @@ export async function saveNote(prevState, formData) {
   }
 
   // 模拟请求时间
-  await sleep(2000)
+  await sleep(1000)
 
   // 更新数据库
   if (noteId) {
     await updateNote(noteId, JSON.stringify(data))
     revalidatePath('/', 'layout')
+    redirect(`/note/${noteId}`)
   } else {
-    await addNote(JSON.stringify(data))
+    const res = await addNote(JSON.stringify(data))
     revalidatePath('/', 'layout')
+    redirect(`/note/${res}`)
   }
   
-  return { message: `Add Success!` }
+  // return { message: `Add Success!` }
 }
 
 export async function deleteNote(prevState, formData) {
